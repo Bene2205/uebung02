@@ -45,6 +45,11 @@ class StringSetTest {
 		assertTrue(impl.contains("In"));
 		assertTrue(impl.contains("und"));
 		assertTrue(impl.contains("herum"));
+
+		//remove root
+		impl.remove("In");
+		assertEquals(2, impl.size());
+		assertFalse(impl.contains("In"));
 	}
 
 }

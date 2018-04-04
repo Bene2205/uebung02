@@ -92,9 +92,9 @@ public class StringSetImpl implements StringSet {
             throw new NoSuchElementException();
         }
         // Wurzel löschen
-        /*if (root.value.equals(s)) {
+        if (root.value.equals(s)) {
             return removeRoot();
-        }*/
+        }
 
         Element it = root;
         while (it != null) {
@@ -111,6 +111,21 @@ public class StringSetImpl implements StringSet {
             }
         }
         throw new NoSuchElementException();
+    }
+
+    private String removeRoot() {
+        Element it = root;
+
+        if (root.left == null) {
+            root = it.right;
+            return it.value;
+        } else if(root.right == null){
+            root = it.left;
+            return it.value;
+        }
+        root = it.left;
+        addElement(it.right);
+        return it.value;
     }
 
     private String removeElement(Element parent, Element element) {
