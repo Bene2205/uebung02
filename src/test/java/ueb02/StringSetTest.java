@@ -40,6 +40,11 @@ class StringSetTest {
 		assertFalse(impl.contains("Ulm"));
 		assertFalse(impl.contains("um"));
 		assertFalse(impl.contains("Hans"));
+
+		// teste enthaltene Elemente
+		assertTrue(impl.contains("In"));
+		assertTrue(impl.contains("und"));
+		assertTrue(impl.contains("herum"));
 	}
 
 }
