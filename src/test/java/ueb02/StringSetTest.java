@@ -7,6 +7,19 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringSetTest {
+
+	@Test
+	void testRemoveRoot() {
+		StringSet impl = new StringSetImpl();
+		String str = "In Ulm und um Ulm und um Ulm herum";
+
+		for (String c : str.split(" ")) {
+			impl.add(c);
+		}
+
+		assertEquals("In", impl.remove("In"));
+	}
+
 	@Test
 	void testStringSet() {
 		StringSet impl = new StringSetImpl();
